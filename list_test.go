@@ -16,6 +16,16 @@ func TestShouldAddItemToList(t *testing.T) {
 
 }
 
+func TestShouldReturnListSize(t *testing.T) {
+  myList := NewList()
+
+  myList.Add("Remember to finish this package")
+  myList.Add("Learn more about Vagrant/ansible/docker")
+  myList.Add("finish integration with Travis CI")
+
+  assert.Equal(t, 3, myList.Size(), "There should be only 3 item")
+}
+
 func TestShouldRaiseErrorWhenIndexIsEmpty(t *testing.T) {
   myList    := NewList()
   item, err := myList.Get(0)

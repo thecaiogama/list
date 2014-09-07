@@ -23,3 +23,7 @@ func (list *List) Get(e int) (item interface{}, err error) {
 func NewList() *List {
   return &List{itens: make([]interface{}, 10), size:0}
 }
+
+func (list *List) Size() (size int) {
+  return list.size
+}
